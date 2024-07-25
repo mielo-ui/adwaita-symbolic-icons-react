@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/mielo-ui/mielo.css/main/logo.png" />
-</p>
-
 <h1 align="center">
   Adwaita Icons React
 </h1>
