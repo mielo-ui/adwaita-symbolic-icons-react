@@ -1,0 +1,69 @@
+{
+  "name": "adwaita-symbolic-icons-react",
+  "author": {
+    "name": "Anton Shramko",
+    "email": "antonshramko@yandex.ru"
+  },
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "types": "dist/types.d.ts",
+  "module": "dist/esm/index.js",
+  "bugs": {
+    "url": "https://github.com/mielo-ui/adwaita-symbolic-icons-react/issues"
+  },
+  "keywords": [
+    "symbolic",
+    "gnome",
+    "adwaita",
+    "web",
+    "icons",
+    "react"
+  ],
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist"
+  ],
+  "scripts": {
+    "style": "prettier --config .prettierrc 'src/**/*.{ts,tsx}' --write",
+    "lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
+    "clean": "rimraf dist",
+    "generate": "node scripts/transform.js && npm run fmt",
+    "build": "npm run clean && rollup -c --bundleConfigAsCjs",
+    "fmt": "npm run style && npm run lint",
+    "build:all": "npm run generate && npm run build"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@svgr/plugin-svgo": "^8.1.0",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "change-case": "^4",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "fs-extra": "^11.2.0",
+    "prettier": "^3.2.5",
+    "rollup": "^4.18.1",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tslib": "^2.6.3",
+    "typescript": "^5.2.2"
+  }
+}
