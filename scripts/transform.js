@@ -10,7 +10,6 @@ const SVGR_CONFIG = {
   jsxRuntime: "classic",
   exportType: "default",
   typescript: true,
-  icon: "1rem",
   svgo: true,
   ref: true,
 }
@@ -36,7 +35,9 @@ function transformCode(code) {
   .replaceAll(`writingMode: "lr-tb",`, "")
   .replaceAll(`shapePadding: 0,`, "")
   .replaceAll(`solidColor: "#000",`, "")
-  .replaceAll(COLORS_REGEX, "")
+  .replaceAll(COLORS_REGEX, "currentColor")
+  .replaceAll(`width={16}`, "width={16} height={16}")
+  .replaceAll(`height={16}`, `viewBox="0 0 16 16"`)
 }
 
 function getName(filename) {

@@ -7,14 +7,12 @@ const ChannelInsecure = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
     <path
-      fill=""
+      fill="currentColor"
       d="M8 0C5.8 0 4 1.8 4 4v1c0 .55.45 1 1 1s1-.45 1-1V4c0-1.125.875-2 2-2s2 .875 2 2v3h2V4c0-2.2-1.8-4-4-4M4 8c-1.11 0-2 .89-2 2v5c0 .555.445 1 1 1h4V8zm0 0"
     />
     <path

@@ -1,5 +1,5 @@
 {
-  "name": "adwaita-symbolic-icons-react",
+  "name": "@mielo-ui/adwaita-symbolic-icons-react",
   "author": {
     "name": "Anton Shramko",
     "email": "antonshramko@yandex.ru"
@@ -8,6 +8,10 @@
   "main": "dist/cjs/index.js",
   "types": "dist/types.d.ts",
   "module": "dist/esm/index.js",
+  "repository": {
+    "url": "https://github.com/mielo-ui/adwaita-symbolic-icons-react"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mielo-ui/adwaita-symbolic-icons-react/issues"
   },
@@ -22,7 +26,8 @@
   "files": [
     "README.md",
     "LICENSE",
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "style": "prettier --config .prettierrc 'src/**/*.{ts,tsx}' --write",

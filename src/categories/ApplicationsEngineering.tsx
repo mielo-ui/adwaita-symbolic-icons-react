@@ -7,13 +7,11 @@ const ApplicationsEngineering = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
-    <g fill="">
+    <g fill="currentColor">
       <path
         fillRule="evenodd"
         d="M7.996 8C4 8 2 11 2 14H.25c-.25 0-.25.156-.25.25v1.5c0 .25.137.25.25.25h15.492c.195.008.25-.129.25-.25v-1.5c.024-.145 0-.25-.25-.25h-1.746c0-3-2-6-6-6m0 3c2.352 0 3 1.762 3 3H5c0-1.2.7-3 2.996-3m0 0"

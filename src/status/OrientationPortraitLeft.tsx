@@ -7,14 +7,12 @@ const OrientationPortraitLeft = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
     <path
-      fill=""
+      fill="currentColor"
       d="M2.992 2.168a1.11 1.11 0 0 1 1.113-1.113h7.844a1.11 1.11 0 0 1 1.113 1.113v11.738a1.11 1.11 0 0 1-1.113 1.114H4.105a1.11 1.11 0 0 1-1.113-1.114zm3 5.84L10 12V4zm0 0"
     />
   </svg>

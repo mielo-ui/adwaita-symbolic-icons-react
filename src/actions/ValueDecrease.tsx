@@ -7,13 +7,11 @@ const ValueDecrease = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
-    <path fill="" d="M3 7h10v2H3zm0 0" />
+    <path fill="currentColor" d="M3 7h10v2H3zm0 0" />
   </svg>
 )
 const ForwardRef = forwardRef(ValueDecrease)

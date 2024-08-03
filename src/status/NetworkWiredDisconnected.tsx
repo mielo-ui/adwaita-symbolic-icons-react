@@ -7,13 +7,11 @@ const NetworkWiredDisconnected = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
-    <g fill="">
+    <g fill="currentColor">
       <path d="M15 10a1 1 0 0 1 .707 1.707L14.414 13l1.293 1.293a1 1 0 1 1-1.414 1.414L13 14.414l-1.293 1.293a1 1 0 1 1-1.414-1.414L11.586 13l-1.293-1.293a1 1 0 1 1 1.414-1.414L13 11.586l1.293-1.293A1 1 0 0 1 15 10m0 0" />
       <path
         fillOpacity={0.349}

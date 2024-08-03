@@ -7,13 +7,11 @@ const DocumentPageSetup = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
-    <g fill="">
+    <g fill="currentColor">
       <path
         fillRule="evenodd"
         d="M1 4.766V13h14.223zm2 3.468L7.777 11H3zm0 0"

@@ -7,13 +7,11 @@ const NetworkNoRoute = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
-    <g fill="">
+    <g fill="currentColor">
       <path d="M8.168 3.008a2.95 2.95 0 0 0-1.3.222A3 3 0 0 0 5.015 6h2a1 1 0 1 1 1 1c-.551 0-1 .45-1 1v2h2V8.82a3.02 3.02 0 0 0 1.773-1.672 3.01 3.01 0 0 0-.652-3.27 3 3 0 0 0-1.969-.87M8.016 11c-.551 0-1 .45-1 1s.449 1 1 1 1-.45 1-1-.45-1-1-1m0 0" />
       <path
         fillOpacity={0.349}

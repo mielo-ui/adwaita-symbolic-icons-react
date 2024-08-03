@@ -7,14 +7,12 @@ const BatteryLevel_10 = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
     <path
-      fill=""
+      fill="currentColor"
       d="M7 0C6 0 6 1 6 1v1H5s-.707-.016-1.45.355C2.814 2.727 2 3.668 2 5v8s-.016.707.355 1.45C2.727 15.187 3.668 16 5 16h2v-2H5c-.555 0-1-.445-1-1V5c0-.555.445-1 1-1h6c.555 0 1 .445 1 1v2h2V5c0-1.332-.812-2.273-1.55-2.645C11.706 1.985 11 2 11 2h-1V1c0-1-1-1-1-1zm0 0"
     />
     <path fill="#ed333b" d="M5 12v1h2v-1zm0 0" className="prefix__error" />

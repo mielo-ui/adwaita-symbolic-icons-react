@@ -4,8 +4,7 @@ import { Ref, forwardRef } from "react"
 const FaceAngry = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
+    viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >

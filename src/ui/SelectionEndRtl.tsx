@@ -7,13 +7,11 @@ const SelectionEndRtl = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
-    <path fill="" d="m11.008 14-6-6V2h6zm0 0" />
+    <path fill="currentColor" d="m11.008 14-6-6V2h6zm0 0" />
   </svg>
 )
 const ForwardRef = forwardRef(SelectionEndRtl)

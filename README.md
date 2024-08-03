@@ -12,7 +12,7 @@
 ### NPM
 
 ```sh
-npm install adwaita-symbolic-icons-react
+npm install @mielo-ui/adwaita-symbolic-icons-react
 ```
 
 **or**
@@ -20,18 +20,18 @@ npm install adwaita-symbolic-icons-react
 ### Yarn
 
 ```sh
-npm install adwaita-symbolic-icons-react
+npm install @mielo-ui/adwaita-symbolic-icons-react
 ```
 
 ### Import
 ``` tsx
-import * as Icons from "adwaita-symbolic-icons-react"
+import * as Icons from "@mielo-ui/adwaita-symbolic-icons-react"
 
 <Icons.Actions.EditCopy className="icon" />
 ```
 
 ## Documentation
-Browse the [online documentation here.](#todo)
+Browse the [online documentation here.](https://mielo-ui.github.io/icon)
 
 # Development
 For build library from source:

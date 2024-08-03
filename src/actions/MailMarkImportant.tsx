@@ -7,14 +7,12 @@ const MailMarkImportant = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
     <path
-      fill=""
+      fill="currentColor"
       d="M3 0C1.355 0 0 1.355 0 3v6c0 1.645 1.355 3 3 3h3c.55 0 1-.45 1-1s-.45-1-1-1H3c-.57 0-1-.43-1-1V3.203l4.613 3.074a2.505 2.505 0 0 0 2.774 0L14 3.203V6c0 .55.45 1 1 1s1-.45 1-1V3c0-1.645-1.355-3-3-3zm.8 2h8.4L8.276 4.613a.495.495 0 0 1-.554 0zm0 0"
     />
     <path

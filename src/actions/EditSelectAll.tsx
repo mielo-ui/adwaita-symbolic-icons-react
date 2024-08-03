@@ -7,13 +7,11 @@ const EditSelectAll = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1rem"
-    height="1rem"
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
-    <g fill="">
+    <g fill="currentColor">
       <path d="M0 0v3h3V0zm4 0v2h3V0zm4 0v2h4V0zm5 0v3h3V0zM0 4v4h2V4zm14 0v3h2V4zm0 4v4h2V8zM0 9v3h2V9zm0 4v3h3v-3zm13 0v3h3v-3zm-9 1v2h4v-2zm5 0v2h3v-2zm0 0" />
       <path
         fillOpacity={0.349}
