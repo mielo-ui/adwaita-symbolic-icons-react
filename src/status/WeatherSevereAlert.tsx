@@ -7,6 +7,8 @@ const WeatherSevereAlert = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={16}
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
@@ -22,9 +24,9 @@ const WeatherSevereAlert = (
       }}
     />
     <path
-      fill="#ff7800"
+      fill="currentColor"
       d="M8.875 8A.864.864 0 0 0 8 8.875v6.25c0 .492.383.875.875.875h6.25a.864.864 0 0 0 .875-.875v-6.25A.864.864 0 0 0 15.125 8zM11 9h2v2.5s0 .5-.5.5h-1c-.5 0-.5-.5-.5-.5zm.5 4h1c.277 0 .5.223.5.5v1c0 .277-.223.5-.5.5h-1a.5.5 0 0 1-.5-.5v-1c0-.277.223-.5.5-.5m0 0"
-      className="prefix__warning"
+      className="warning"
     />
   </svg>
 )

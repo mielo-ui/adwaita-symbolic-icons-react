@@ -7,14 +7,16 @@ const BatteryLevel_90Charging = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={16}
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
     <path
-      fill="#33d17a"
+      fill="currentColor"
       d="M5 6v7h3v-1c0-.531.21-1.04.586-1.414L11 8.172V6zm0 0"
-      className="prefix__success"
+      className="success"
     />
     <path
       fill="currentColor"

@@ -5,7 +5,14 @@ const RotationLocked = (
   props: SVGProps<SVGSVGElement>,
   ref: Ref<SVGSVGElement>,
 ) => (
-  <svg xmlns="http://www.w3.org/2000/svg" height={16.02} ref={ref} {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={16}
+    viewBox="0 0 16 16"
+    ref={ref}
+    {...props}
+  >
     <g fill="currentColor">
       <path
         fillOpacity={0.349}

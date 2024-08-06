@@ -7,14 +7,16 @@ const TaskPastDue = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={16}
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
     <path
-      fill="#e01b24"
+      fill="currentColor"
       d="M11.715 8.012a3.999 3.999 0 0 0-2.543 6.816 3.999 3.999 0 1 0 2.543-6.816m-1.13 1.57c.255 0 .513.102.708.297l.707.707.707-.707a1 1 0 1 1 1.414 1.414l-.707.707.707.707a1 1 0 1 1-1.414 1.414L12 13.414l-.707.707a1 1 0 1 1-1.414-1.414l.707-.707-.707-.707a1.004 1.004 0 0 1 .707-1.71m0 0"
-      className="prefix__error"
+      className="error"
     />
     <path
       fill="currentColor"

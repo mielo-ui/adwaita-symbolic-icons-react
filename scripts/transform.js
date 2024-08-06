@@ -1,7 +1,7 @@
+const { parse: parseSVG, stringify: stringifySVG } = require("svgson")
 const { remove, ensureDir } = require("fs-extra")
 const { transform } = require("@svgr/core")
 const changeCase = require("change-case")
-const process = require("process")
 const path = require("path")
 const fs = require("fs")
 
@@ -12,6 +12,20 @@ const SVGR_CONFIG = {
   typescript: true,
   svgo: true,
   ref: true,
+  svgoConfig: {
+    js2svg: { indent: 2, pretty: true },
+
+    plugins: [
+      {
+        name: "preset-default",
+        params: {
+          overrides: {
+            removeViewBox: false,
+          },
+        },
+      },
+    ],
+  },
 }
 
 const ROOT_ICON_DIR = path.join(
@@ -22,22 +36,48 @@ const ROOT_ICON_DIR = path.join(
 
 const ROOT_OUT_DIR = path.join(__dirname, "..", "src")
 
-function transformCode(code) {
-  const COLORS_REGEX = /(#2e3436|#2e3434)/g
-  const _HEX_REGEX = /(#[0-9|a-f]{6})/g
+async function prepareSvgCode(svg) {
+  const tree = await parseSVG(svg)
 
-  return code
-  .replaceAll(`colorInterpolationFilters: "linearRGB",`, "")
-  .replaceAll(`InkscapeFontSpecification: "&quot",`, "")
-  .replaceAll(`InkscapeFontSpecification: "Sans",`, "")
-  .replaceAll(/InkscapeStroke: "none",/gm, "")
-  .replaceAll(/InkscapeStroke: "none"/gm, "")
-  .replaceAll(`writingMode: "lr-tb",`, "")
-  .replaceAll(`shapePadding: 0,`, "")
-  .replaceAll(`solidColor: "#000",`, "")
-  .replaceAll(COLORS_REGEX, "currentColor")
-  .replaceAll(`width={16}`, "width={16} height={16}")
-  .replaceAll(`height={16}`, `viewBox="0 0 16 16"`)
+  const cleanSvgNode = node => {
+    if (node.name === "svg") {
+      Object.assign(node?.attributes, {
+        viewBox: "0 0 16 16",
+        height: 16,
+        width: 16,
+      })
+    }
+
+    if (node?.attributes?.stroke) {
+      node.attributes.stroke = "currentColor"
+    }
+
+    if (node?.attributes?.fill) {
+      node.attributes.fill = "currentColor"
+    }
+
+    if (node?.attributes?.style) {
+      Object.assign(node.attributes, {
+        style: node?.attributes?.style
+          ?.replaceAll("shape-padding:0;", "")
+          .replaceAll("-inkscape-stroke:none;", "")
+          .replaceAll("-inkscape-stroke:none", ""),
+      })
+    }
+
+    if (node?.children) {
+      for (const children of node?.children || []) {
+        cleanSvgNode(children)
+      }
+    }
+
+    return node
+  }
+
+  cleanSvgNode(tree)
+
+  const clean = stringifySVG(tree)
+  return clean
 }
 
 function getName(filename) {
@@ -46,7 +86,7 @@ function getName(filename) {
   )
 }
 
-function pipeTransform(groups) {
+async function pipeTransform(groups) {
   const indexes = {}
 
   for (const group of groups) {
@@ -66,10 +106,11 @@ function pipeTransform(groups) {
     for (const [name, source] of Object.entries(names)) {
       const sourcePath = path.join(ROOT_ICON_DIR, group, source)
       const outPath = path.join(outDir, `${name}.tsx`)
-      const svg = fs.readFileSync(sourcePath, "utf-8")
+      const rawSvg = fs.readFileSync(sourcePath, "utf-8")
+      const svg = await prepareSvgCode(rawSvg)
 
       let code = transform.sync(svg, SVGR_CONFIG, { componentName: name })
-      fs.writeFileSync(outPath, transformCode(code), "utf-8")
+      fs.writeFileSync(outPath, code, "utf-8")
 
       indexes[group] += `export { default as ${name} } from "./${name}"\n`
     }
@@ -95,12 +136,14 @@ function pipeGroupIndex(indexes) {
 }
 
 async function main() {
-  const groups = fs.readdirSync(ROOT_ICON_DIR).filter(group => group !== "legacy")
+  const groups = fs
+    .readdirSync(ROOT_ICON_DIR)
+    .filter(group => group !== "legacy")
 
   await remove(ROOT_OUT_DIR)
   await Promise.all(groups.map(g => ensureDir(path.join(ROOT_OUT_DIR, g))))
 
-  const indexes = pipeTransform(groups)
+  const indexes = await pipeTransform(groups)
   const globalImports = pipeGroupIndex(indexes)
 
   await fs.writeFileSync(

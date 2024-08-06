@@ -7,11 +7,13 @@ const HelpContents = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={16}
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
-    <g fill="#474747">
+    <g fill="currentColor">
       <path
         d="m3.025 0 .034.002a2 2 0 0 0-.159 0h-.02l-.024.002A1.98 1.98 0 0 0 1 2.045v11.914A1.98 1.98 0 0 0 3.041 16h9.918A1.98 1.98 0 0 0 15 13.96V5a2 2 0 0 0-.617-1.422L11.426.62A2 2 0 0 0 10.004 0h-.008zm-.017 2c-.002-.002.005 0 .002 0h6.965c-.01 0 .014.011.007.004l.008.008 2.998 3.002.008.006c-.007-.007.004.019.004.01v8.959c-.001-.08-.093.01-.012.012H3.012c.081-.001-.01-.092-.012-.012V2.011c.001.055.027.005.008-.01z"
         color="#bebebe"
@@ -33,7 +35,6 @@ const HelpContents = (
           textDecorationColor: "#000",
           textTransform: "none",
           textOrientation: "mixed",
-
           isolation: "auto",
           mixBlendMode: "normal",
           marker: "none",
@@ -60,7 +61,6 @@ const HelpContents = (
           textDecorationColor: "#000",
           textTransform: "none",
           textOrientation: "mixed",
-
           isolation: "auto",
           mixBlendMode: "normal",
           marker: "none",
@@ -87,7 +87,6 @@ const HelpContents = (
           textDecorationColor: "#000",
           textTransform: "none",
           textOrientation: "mixed",
-
           isolation: "auto",
           mixBlendMode: "normal",
           marker: "none",

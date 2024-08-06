@@ -7,12 +7,14 @@ const MicrophoneSensitivityLow = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    width={16}
+    height={16}
     viewBox="0 0 16 16"
     ref={ref}
     {...props}
   >
     <path
-      fill="#2d3336"
+      fill="currentColor"
       fillOpacity={0.671}
       d="M8 1C6.34 1 5 2.34 5 4v4h2V4c0-.555.445-1 1-1s1 .445 1 1v4h2V4c0-1.66-1.34-3-3-3m0 0"
     />

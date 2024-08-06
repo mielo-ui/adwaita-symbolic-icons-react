@@ -4,7 +4,7 @@
     "name": "Anton Shramko",
     "email": "antonshramko@yandex.ru"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/cjs/index.js",
   "types": "dist/types.d.ts",
   "module": "dist/esm/index.js",
@@ -68,6 +68,7 @@
     "rollup": "^4.18.1",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "svgson": "^5.3.1",
     "tslib": "^2.6.3",
     "typescript": "^5.2.2"
   }
