@@ -1,11 +1,5 @@
-<h1 align="center">
-  Adwaita Icons React
-</h1>
-
-<p align="center">
-  Package contains generated svg icons as react library from <a href="https://gitlab.gnome.org/GNOME/adwaita-icon-theme">Adwaita Icon Theme</a>
-</p>
-
+## Adwaita Icons React
+Package contains generated symbolic svg icons as react library from [Adwaita Icon Theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme)
 
 ## Quick install
 
